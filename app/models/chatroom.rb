@@ -1,4 +1,5 @@
 class Chatroom < ApplicationRecord
-  has_many :users
+  has_many :userchats
+  has_many :users, through: :userchats
   has_many :messages
 end
