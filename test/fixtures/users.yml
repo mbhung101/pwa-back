@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  dob: MyString
+  pca: 
+  online: false
+
+two:
+  name: MyString
+  phone: MyString
+  dob: MyString
+  pca: 
+  online: false
