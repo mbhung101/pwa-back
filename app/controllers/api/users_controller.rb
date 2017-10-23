@@ -9,10 +9,13 @@ class Api::UsersController < ApplicationController
     if (params[:password])
       @user = User.where("name = ?",params[:name]).where("password = ?",params[:password])
       render json:@user
-    else
+    elsif (params[:dob])
       @user = User.where("name = ?",verifyParams[:name]).where("dob = ?",verifyParams[:dob])
          render json: @user
-      end
+    else
+      @user = User.where("id =?",params["id"])
+      render json: @user
+    end
   end
 
   private

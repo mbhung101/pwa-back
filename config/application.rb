@@ -31,6 +31,11 @@ module Pwaback
       end
     end
 
+    config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'http://my-web-service-consumer-site.com',
+    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+  }
+
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
