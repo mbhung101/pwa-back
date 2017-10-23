@@ -1,17 +1,17 @@
 class Api::ChatroomsController < ApplicationController
 
   def index
-    @chatrooms = Chatroom.order(:created_at)
+    @chatrooms = Chatroom.where(:created_at)
     render json: @chatrooms
   end
 
   def create
     debugger
-    @chatroom = Chatroom.create(nr)
-    render json:@chatroom
+    @chatrooms = Chatroom.where("user_id = ?",params[:name])
   end
 
   private
+
   def chatroomParams
     params.require(:chatroom).permit(:name,:chatroom_id,:user_id)
   end
