@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20171022040858) do
     t.text "message"
     t.boolean "sms"
     t.bigint "user_id"
+    t.bigint "chatroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -50,5 +52,6 @@ ActiveRecord::Schema.define(version: 20171022040858) do
   end
 
   add_foreign_key "chatrooms", "users"
+  add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
 end

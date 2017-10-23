@@ -6,7 +6,7 @@ class Api::ChatroomsController < ApplicationController
   end
 
   def create
-    debugger    
+    debugger
     @chatroom = Chatroom.create(nr)
     render json:@chatroom
   end
