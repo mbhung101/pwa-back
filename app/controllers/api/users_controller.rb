@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    if (params[:password].length > 0)
+    if (params[:password])
       @user = User.where("name = ?",params[:name]).where("password = ?",params[:password])
       render json:@user
     else
