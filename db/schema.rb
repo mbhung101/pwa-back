@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171022040858) do
     t.string "phone"
     t.string "dob"
     t.string "pca"
+    t.string "password"
     t.boolean "online"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

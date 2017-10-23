@@ -6,8 +6,9 @@ class Api::ChatroomsController < ApplicationController
   end
 
   def create
-    debugger
-    @chatrooms = Chatroom.where("user_id = ?",params[:name])
+    @user = User.where("id = ?",params[:user_id])
+    @chatrooms = @user[0].chatrooms
+    render json: @chatrooms
   end
 
   private

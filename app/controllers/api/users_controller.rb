@@ -6,8 +6,8 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    if (params.permitted?) === true
-      @user = User.create(userParams)
+    if (params[:password].length > 0)
+      @user = User.where("name = ?",params[:name]).where("password = ?",params[:password])
       render json:@user
     else
       @user = User.where("name = ?",verifyParams[:name]).where("dob = ?",verifyParams[:dob])
@@ -16,10 +16,6 @@ class Api::UsersController < ApplicationController
   end
 
   private
-
-  def userParams
-    params.require(:user).permit(:name,:phone,:dob,:pca,:online)
-  end
 
   def verifyParams
     params.require(:user).permit(:name,:dob,:online)
