@@ -8,11 +8,10 @@ class Api::UsersController < ApplicationController
   def create
     if (params[:password])
       @user = User.where("name = ?",params[:name]).where("password = ?",params[:password])
-      puts @user      
       render json:@user
     elsif (params[:dob])
       @user = User.where("name = ?",params[:name]).where("dob = ?",params[:dob])
-        render json: @user
+      render json: @user
     else
       @user = User.where("id =?",params["id"])
       render json: @user
