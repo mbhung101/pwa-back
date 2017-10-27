@@ -13,4 +13,4 @@ chatrooms = Chatroom.create([{name:"Sick Bob's Chatroom"},{name:"Aalap's Chatroo
 
 userchats = Userchat.create([{user_id:1,chatroom_id:1},{user_id:2,chatroom_id:2},{user_id:3,chatroom_id:3},{user_id:4,chatroom_id:1},{user_id:4,chatroom_id:2},{user_id:4,chatroom_id:3}])
 
-messages = Message.create([{message:"I ate a fork doctor!", sms: "true", user_id:1, chatroom_id:1},{message:"You're not very smart", sms: "false", user_id:4, chatroom_id:1},{message:"I need help with my brain damage", sms: "false", user_id:2, chatroom_id:2}])
+messages = Message.create([{message:"I ate a fork doctor!", sms: "true", user_id:1, chatroom_id:1},{message:"You're not very smart", sms: "false", user_id:4, chatroom_id:1},{message:"My brains hurts", sms: "false", user_id:2, chatroom_id:2}])
